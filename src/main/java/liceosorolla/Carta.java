@@ -5,9 +5,12 @@ public class Carta {
 	private Figura figura;
 	
 	
-	public Carta(Figura figura, int numero) {
-		this.figura=figura;
+	public Carta(int numero) {
 		this.numero=numero;
+	}
+	
+	public Carta(Figura figura) {
+		this.figura=figura;
 	}
 	
 	
@@ -26,9 +29,9 @@ public class Carta {
 	
 	public String toString() {
 		if(numero==0) {
-			return "Carta [figura=" + figura + "]";
+			return "Carta " + figura;
 		}else {
-			return "Carta [numero="+ numero+ "]";
+			return "Carta " + numero;
 		}
 	}
 	
