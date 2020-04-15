@@ -16,13 +16,8 @@ public class Tablero {
 	
 	
 	public void pasar(ArrayList<Carta> cartas) {
-		int numero=0;
 		for(int j=0;j < cartas.size();j++) {
-			columnas.get(numero).agregarCarta(cartas.get(j));
-			numero++;
-			if(numero == 9) {
-				numero = numero - 10;
-			}
+			columnas.get(j%10).agregarCarta(cartas.get(j));
 		}		
 	}
 }
