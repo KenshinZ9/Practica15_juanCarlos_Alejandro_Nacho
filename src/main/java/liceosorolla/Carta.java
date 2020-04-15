@@ -29,9 +29,9 @@ public class Carta {
 	
 	public String toString() {
 		if(numero==0) {
-			return "Carta " + figura;
+			return "["+ figura+"]";
 		}else {
-			return "Carta " + numero;
+			return "[" + numero+"]";
 		}
 	}
 	

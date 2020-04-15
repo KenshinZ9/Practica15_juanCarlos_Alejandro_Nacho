@@ -8,67 +8,78 @@ public class StartSolitario {
 	
 	public static void main(String[] args) {
 		Baraja baraja = new Baraja();
-		ArrayList<Carta> tablero = new ArrayList<Carta>();
+		ArrayList<Carta> primerasCartas = new ArrayList<Carta>();
 		
-	
-		for(int j = 0; j < baraja.getCartas().size();j++) {
-			System.out.println(baraja.getCartas().get(j));
+		
+		for(int j = 0; j < 54 ;j++) {
+			primerasCartas.add(baraja.sacarCarta());
 		}
 		
-		pasar(54,tablero,baraja);
 		
-		System.out.println(baraja.getCartas().size());
+		Tablero tablero = new Tablero();
 		
-		for(int j = 0; j < tablero.size();j++) {
-			System.out.println(tablero.get(j));
+		tablero.pasar(primerasCartas);
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		/*
+		System.out.println("Baraja: "+baraja.getCartas().size());
+	
+		System.out.println("Tablero: "+barajaTablero.size());
+		int x=9;
+		for(int j = 0; j < barajaTablero.size();j++) {
+			System.out.print(barajaTablero.get(j));
+			if(j == x) {
+				System.out.println();
+				x = x+10;
+			}
+			
 		}
-		System.out.println(tablero.size());
 		
-		Tablero.tablero(tablero);
+		/*System.out.println("columna:" +columna.getColumna().size());
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+		Columna columna = new Columna(barajaTablero);
+		for(int j = 0; j < columna.getColumna().size();j++) {
+			System.out.print(columna.getColumna().get(j));
+		}
+		System.out.println();
+		Columna columna1 = new Columna(barajaTablero);
+		for(int j = 0; j < columna1.getColumna().size();j++) {
+			System.out.print(columna1.getColumna().get(j));
+		}
+		*/
 	}
-	
-	public static void pasar(int cantidad, ArrayList<Carta> tablero, Baraja baraja) {
-		for(int j = 0; j < cantidad ;j++) {
-			tablero.add(baraja.sacarCarta());
-		}		
-	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 	
 	
 }
+
 	
+	
+	
+/*
+	for(int j = 0; j < baraja.getCartas().size();j++) {
+		System.out.println(baraja.getCartas().get(j));
+	}
+	System.out.println(baraja.getCartas().size());
+	
+	for(int j = 0; j < tablero.size();j++) {
+		System.out.println(tablero.get(j));
+	}
+	System.out.println(tablero.size());
+	*/
+
+	
+	
+
