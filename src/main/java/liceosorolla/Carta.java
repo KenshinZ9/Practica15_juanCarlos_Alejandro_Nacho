@@ -3,6 +3,7 @@ package main.java.liceosorolla;
 public class Carta {
 	private int numero;
 	private Figura figura;
+	private boolean x;
 	
 	
 	public Carta(int numero) {
@@ -27,12 +28,25 @@ public class Carta {
 		this.figura = figura;
 	}
 	
+	public boolean isX() {
+		return x;
+	}
+	public void setX(boolean x) {
+		this.x = x;
+	}
+	
 	public String toString() {
-		if(numero==0) {
-			return "["+ figura+"]";
-		}else {
-			return "[" + numero+"]";
+		if(x) {
+			if(numero==0) {
+				return "["+ figura+"]";
+			}else {
+				return "[" + numero+"]";
+			}
+		}else{
+			return "[X]";
 		}
 	}
+
+	
 	
 }

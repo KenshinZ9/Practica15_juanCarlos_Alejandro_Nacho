@@ -19,10 +19,9 @@ public class StartSolitario {
 		Tablero tablero = new Tablero();
 		
 		tablero.pasar(primerasCartas);
+		tablero.imprimir();
 		
-		
-		
-		
+		System.out.println(tablero.maximo());
 		
 		
 		
