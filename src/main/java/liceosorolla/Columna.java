@@ -20,5 +20,9 @@ public class Columna {
 	public void  agregarCarta(Carta carta) {
 		columna.add(carta);	
 	}
+	
+	public void girar() {
+		columna.get(columna.size()-1).setX(true);
+	}
 }
 

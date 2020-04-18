@@ -44,12 +44,7 @@ public class Tablero {
 	
 	public void girar(){
 		for(int i=0;i < 10;i++) {
-			for(int j=0;j < columnas.get(i).getColumna().size();j++) {
-				if(j == columnas.get(i).getColumna().size()-1) {
-					columnas.get(i).getColumna().get(i).setX(true);
-					
-				}
-			}
+				columnas.get(i).girar();
 		}
 	}
 	
