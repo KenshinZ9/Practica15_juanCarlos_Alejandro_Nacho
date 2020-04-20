@@ -13,8 +13,8 @@ public class Tablero {
 		}
 	}
 	                
-	public void pasar(ArrayList<Carta> cartas) {
-		for(int j=0;j < cartas.size();j++) {
+	public void pasar(ArrayList<Carta> cartas,int numero) {
+		for(int j=0;j < numero;j++) {
 			columnas.get(j%10).agregarCarta(cartas.get(j));
 		}		
 	}

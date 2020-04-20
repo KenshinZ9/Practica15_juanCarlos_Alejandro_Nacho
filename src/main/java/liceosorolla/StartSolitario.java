@@ -13,36 +13,62 @@ public class StartSolitario {
 		Tablero tablero = new Tablero();
 		ArrayList<Carta> primerasCartas = new ArrayList<Carta>();
 		int columna;
+		int columna1;
+		int cantidad;
+		boolean acabar = true;
 		
 		for(int j = 0; j < 54 ;j++) {
 			primerasCartas.add(baraja.sacarCarta());
 		}
-		
-		
-		
-		
+		tablero.pasar(primerasCartas,primerasCartas.size());
 		System.out.println("Bienvenido al Solitario Spider!!!");
 		System.out.println("Empieza el juego..."+"\r");
 		
-		tablero.pasar(primerasCartas);
-		tablero.girar();
-		tablero.imprimir();
-		System.out.println("¿Desea sacar nuevas cartas del mazo?");
-		if(scanner.next().equals("si")) {
-			System.out.println("si");
-		}else {
-			System.out.println("no");
-		}
-		System.out.println("¿Qué columna desea mover?");
-		
-		System.out.println("¿A qué columna desea mover?");
-		System.out.println("¿Cuántas cartas?");
-
-		System.out.println(tablero.maximo());
-		
-	
+		do {
+			primerasCartas.clear();
+			tablero.girar();
+			tablero.imprimir();
+			if(baraja.getCartas().size() != 0){
+				System.out.println("¿Desea sacar nuevas cartas del mazo?");
+				if(scanner.next().equals("si")) {
+					System.out.println("si");
+					for(int j = 0; j < 10 ;j++) {
+						primerasCartas.add(baraja.sacarCarta());
+					}
+					tablero.pasar(primerasCartas,10);
+					continue;
+				}else {
+					System.out.println("no");
+				}
+			}
+			System.out.println("¿Qué columna desea mover?");
+			columna = scanner.nextInt();
+			System.out.println("¿A qué columna desea mover?");
+			columna1 = scanner.nextInt();
+			System.out.println("¿Cuántas cartas?");
+			cantidad = scanner.nextInt();
+			System.out.println(tablero.maximo());
+		}while(acabar);
 	}
-	public static int comprobarInt() {
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}
+
+	
+	
+	
+
+
+/*public static int comprobarInt() {
 		boolean corregir;
 		int numero = 0;
 		do {
@@ -56,16 +82,6 @@ public class StartSolitario {
 		}while(!corregir); 
 		return numero;
 	}
-	
-	
-}
-
-	
-	
-	
-
-
-
 
 /*
 System.out.println("Baraja: "+baraja.getCartas().size());
