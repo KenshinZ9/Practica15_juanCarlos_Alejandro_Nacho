@@ -48,4 +48,38 @@ public class Tablero {
 		}
 	}
 	
+	public void mover(int numero,int numero2,int cantidad){
+		
+		if(columnas.get(numero2).getColumna().get(columnas.get(numero2).getColumna().size()-1).getFigura() == Figura.A) {
+			if(columnas.get(numero2).getColumna().get(columnas.get(numero2).getColumna().size()-1).getNumero() - 1  ==  columnas.get(numero).getColumna().get(columnas.get(numero).getColumna().size()-1).getNumero()) {
+				columnas.get(numero2).agregarCartas(columnas.get(numero).eliminar(cantidad));	
+			}
+		
+			
+		}else {
+			if(columnas.get(numero2).getColumna().get(columnas.get(numero2).getColumna().size()-1).getNumero() - 1  ==  columnas.get(numero).getColumna().get(columnas.get(numero).getColumna().size()-1).getNumero()) {
+			columnas.get(numero2).agregarCartas(columnas.get(numero).eliminar(cantidad));	
+			}
+		}
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*if(columna.get(columna.size()-1).getNumero() < columna.get(columna.size()-2).getNumero()) {
+System.out.println("La carta es maosd" + columnas.get(numero2).getColumna().get(columnas.get(numero2).getColumna().size()).getNumero());
+*/

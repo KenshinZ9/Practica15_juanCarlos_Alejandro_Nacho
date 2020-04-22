@@ -42,11 +42,12 @@ public class StartSolitario {
 				}
 			}
 			System.out.println("¿Qué columna desea mover?");
-			columna = scanner.nextInt();
+			columna = scanner.nextInt()-1;
 			System.out.println("¿A qué columna desea mover?");
-			columna1 = scanner.nextInt();
+			columna1 = scanner.nextInt()-1;
 			System.out.println("¿Cuántas cartas?");
 			cantidad = scanner.nextInt();
+			tablero.mover(columna, columna1,cantidad);
 			System.out.println(tablero.maximo());
 		}while(acabar);
 	}
