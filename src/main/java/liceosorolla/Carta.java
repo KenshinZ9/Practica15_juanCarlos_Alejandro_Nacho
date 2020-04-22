@@ -1,26 +1,16 @@
 package main.java.liceosorolla;
 
 public class Carta {
-	private int numero;
 	private Figura figura;
 	private boolean x;
 	
 	
-	public Carta(int numero) {
-		this.numero=numero;
-	}
+
 	
 	public Carta(Figura figura) {
 		this.figura=figura;
 	}
 	
-	
-	public int getNumero() {
-		return numero;
-	}
-	public void setNumero(int numero) {
-		this.numero = numero;
-	}
 	public Figura getFigura() {
 		return figura;
 	}
@@ -37,10 +27,17 @@ public class Carta {
 	
 	public String toString() {
 		if(x) {
-			if(numero==0) {
+			switch(figura.ordinal()) {
+			case 0:
 				return "["+ figura+"]";
-			}else {
-				return "[" + numero+"]";
+			case 10:
+				return "["+ figura+"]";
+			case 11:
+				return "["+ figura+"]";
+			case 12:
+				return "["+ figura+"]";	
+			default:
+			return "["+ (figura.ordinal()+1)+"]";
 			}
 		}else{
 			return "[X]";

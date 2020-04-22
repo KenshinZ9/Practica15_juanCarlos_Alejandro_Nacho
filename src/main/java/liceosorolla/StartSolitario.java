@@ -47,7 +47,7 @@ public class StartSolitario {
 			columna1 = scanner.nextInt()-1;
 			System.out.println("¿Cuántas cartas?");
 			cantidad = scanner.nextInt();
-			tablero.mover(columna, columna1,cantidad);
+		//	tablero.mover(columna, columna1,cantidad);
 			System.out.println(tablero.maximo());
 		}while(acabar);
 	}

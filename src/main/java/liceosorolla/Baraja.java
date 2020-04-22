@@ -27,6 +27,33 @@ public class Baraja {
 				case 1:
 					cartas.add(new Carta(Figura.A));
 					break;
+				case 2:
+					cartas.add(new Carta(Figura.dos));
+					break;
+				case 3:
+					cartas.add(new Carta(Figura.tres));
+					break;
+				case 4:
+					cartas.add(new Carta(Figura.cuatro));
+					break;
+				case 5:
+					cartas.add(new Carta(Figura.cinco));
+					break;
+				case 6:
+					cartas.add(new Carta(Figura.seis));
+					break;
+				case 7:
+					cartas.add(new Carta(Figura.siete));
+					break;
+				case 8:
+					cartas.add(new Carta(Figura.ocho));
+					break;
+				case 9:
+					cartas.add(new Carta(Figura.nueve));
+					break;
+				case 10:
+					cartas.add(new Carta(Figura.diez));
+					break;
 				case 11:
 					cartas.add(new Carta(Figura.J));
 					break;
@@ -37,7 +64,6 @@ public class Baraja {
 					cartas.add(new Carta(Figura.K));
 					break;
 				default:
-					cartas.add(new Carta(i));
 				}	
 			}
 		}	
@@ -47,13 +73,8 @@ public class Baraja {
 		ArrayList<Carta> cartas2 = new ArrayList<Carta>();
 		for(int j = 0; j < 104 ;j++) {
 			int random = (int) (Math.random() * cartas.size());
-			if(cartas.get(random).getNumero() == 0) {
 			    cartas2.add(new Carta(cartas.get(random).getFigura()));
 				cartas.remove(random);
-			}else{
-			    cartas2.add(new Carta(cartas.get(random).getNumero()));
-				cartas.remove(random);
-			}
 		}
 		cartas = cartas2;	
 	}
