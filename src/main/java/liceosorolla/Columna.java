@@ -51,6 +51,14 @@ public class Columna {
 		return cartasEliminadas;
 	}
 	
+	public boolean comprobarPasar(ArrayList<Carta> cartas) {
+		boolean comprobar =false;
+		if(cartas.get(cartas.size()-1).getFigura().ordinal()< columna.get(columna.size()-1).getFigura().ordinal() && columna.get(columna.size()-1).getFigura().ordinal()-1 == cartas.get(cartas.size()-1).getFigura().ordinal()) {
+			comprobar = true;
+		}
+		return comprobar;
+	}
+	
 	public static boolean correcto(ArrayList<Carta> cartas) {
 		boolean si = false;
 		int c = 0;

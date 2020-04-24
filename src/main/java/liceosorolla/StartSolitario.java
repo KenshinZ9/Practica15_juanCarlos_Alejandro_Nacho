@@ -23,22 +23,23 @@ public class StartSolitario {
 		tablero.pasar(primerasCartas,primerasCartas.size());
 		System.out.println("Bienvenido al Solitario Spider!!!");
 		System.out.println("Empieza el juego..."+"\r");
-		
 		do {
+			if(baraja.getCartas().size() !=0) {
+				System.out.println("M                     --------");
+			}else {
+				System.out.println("-                     --------");
+			}
 			primerasCartas.clear();
 			tablero.girar();
 			tablero.imprimir();
 			if(baraja.getCartas().size() != 0){
 				System.out.println("¿Desea sacar nuevas cartas del mazo?");
 				if(scanner.next().equals("si")) {
-					System.out.println("si");
 					for(int j = 0; j < 10 ;j++) {
 						primerasCartas.add(baraja.sacarCarta());
 					}
 					tablero.pasar(primerasCartas,10);
 					continue;
-				}else {
-					System.out.println("no");
 				}
 			}
 			System.out.println("¿Qué columna desea mover?");
@@ -48,7 +49,6 @@ public class StartSolitario {
 			System.out.println("¿Cuántas cartas?");
 			cantidad = scanner.nextInt();
 			tablero.mover(columna, columna1,cantidad);
-			System.out.println(tablero.maximo());
 		}while(acabar);
 	}
 	

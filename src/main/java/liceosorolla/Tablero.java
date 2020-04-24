@@ -55,7 +55,7 @@ public class Tablero {
 			columnas.get(numero2).agregarCartas(columnas.get(numero).eliminar(cantidad));	
 		}
 	}else {	
-		if(columnas.get(numero2).correcto(columnas.get(numero).guardar(cantidad))== true)
+		if(columnas.get(numero2).correcto(columnas.get(numero).guardar(cantidad)) && columnas.get(numero2).comprobarPasar(columnas.get(numero).guardar(cantidad)))
 			columnas.get(numero2).agregarCartas(columnas.get(numero).eliminar(cantidad));	
 		}
 	
