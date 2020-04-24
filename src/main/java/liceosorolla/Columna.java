@@ -37,10 +37,6 @@ public class Columna {
 		System.out.println("El tamaño es:"+cartas.size());
 		for(int i=cartas.size()-1;i >= 0;i--) {
 			columna.add(cartas.get(i));
-			System.out.println(columna.size());
-			System.out.println("CArta");
-			System.out.println(cartas.get(i).toString());
-	
 		}
 		
 	}
@@ -51,7 +47,6 @@ public class Columna {
 		for(int i=0;i < numero;i++) {
 			cartasEliminadas.add(columna.get(tamaño));
 			tamaño--;
-			System.out.println("Eo"+cartasEliminadas.toString());
 			}
 		return cartasEliminadas;
 	}
@@ -60,12 +55,8 @@ public class Columna {
 		boolean si = false;
 		int c = 0;
 		for(int i=cartas.size()-1;i >= 0;i--) {
-			System.out.println(cartas.get(i).getFigura().ordinal());
 				if(i > 0 && cartas.get(i).isX()){
 				c = cartas.get(i).getFigura().ordinal() - cartas.get(i-1).getFigura().ordinal();
-				System.out.println("Esto menos"+cartas.get(i).getFigura().ordinal());
-				System.out.println("Esto"+cartas.get(i-1).getFigura().ordinal());
-				System.out.println("La suma es "+c);
 				if(c == 1) {
 					si = true;
 				}else {
