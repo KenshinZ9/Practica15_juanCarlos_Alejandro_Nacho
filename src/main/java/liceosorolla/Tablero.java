@@ -56,10 +56,10 @@ public class Tablero {
 			//System.out.println(columnas.get(numero2).correcto(columnas.get(numero).guardar(cantidad)));
 		}
 	}else {	
-		/*System.out.println(columnas.get(numero2).correcto(columnas.get(numero).guardar(cantidad)));
+		System.out.println(columnas.get(numero2).correcto(columnas.get(numero).guardar(cantidad)));
 		if(columnas.get(numero2).correcto(columnas.get(numero).guardar(cantidad))== true)
 			columnas.get(numero2).agregarCartas(columnas.get(numero).eliminar(cantidad));	
-		}*/	
-	}
+		}
+	
 	}
 }	

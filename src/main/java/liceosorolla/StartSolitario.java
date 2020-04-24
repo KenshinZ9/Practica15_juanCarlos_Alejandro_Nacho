@@ -53,15 +53,6 @@ public class StartSolitario {
 	}
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 }
 
 	
