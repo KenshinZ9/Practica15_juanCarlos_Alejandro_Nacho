@@ -47,40 +47,19 @@ public class Tablero {
 				columnas.get(i).girar();
 		}
 	}
-}
+
 	
-	/*public void mover(int numero,int numero2,int cantidad){
-		
-		if(columnas.get(numero2).getColumna().get(columnas.get(numero2).getColumna().size()-1).getFigura() == Figura.A) {
-			if(columnas.get(numero2).getColumna().get(columnas.get(numero2).getColumna().size()-1).getNumero() - 1  ==  columnas.get(numero).getColumna().get(columnas.get(numero).getColumna().size()-1).getNumero()) {
-				columnas.get(numero2).agregarCartas(columnas.get(numero).eliminar(cantidad));	
-			}
-		
-			
-		}else {
-			if(columnas.get(numero2).getColumna().get(columnas.get(numero2).getColumna().size()-1).getNumero() - 1  ==  columnas.get(numero).getColumna().get(columnas.get(numero).getColumna().size()-1).getNumero()) {
+	public void mover(int numero,int numero2,int cantidad){
+	if(cantidad == 1) {
+		if(columnas.get(numero2).getColumna().get(columnas.get(numero2).getColumna().size()-1).getFigura().ordinal() - 1  ==  columnas.get(numero).getColumna().get(columnas.get(numero).getColumna().size()-1).getFigura().ordinal()) {
 			columnas.get(numero2).agregarCartas(columnas.get(numero).eliminar(cantidad));	
-			}
+			//System.out.println(columnas.get(numero2).correcto(columnas.get(numero).guardar(cantidad)));
 		}
+	}else {	
+		/*System.out.println(columnas.get(numero2).correcto(columnas.get(numero).guardar(cantidad)));
+		if(columnas.get(numero2).correcto(columnas.get(numero).guardar(cantidad))== true)
+			columnas.get(numero2).agregarCartas(columnas.get(numero).eliminar(cantidad));	
+		}*/	
 	}
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*if(columna.get(columna.size()-1).getNumero() < columna.get(columna.size()-2).getNumero()) {
-System.out.println("La carta es maosd" + columnas.get(numero2).getColumna().get(columnas.get(numero2).getColumna().size()).getNumero());
-*/
+	}
+}	
