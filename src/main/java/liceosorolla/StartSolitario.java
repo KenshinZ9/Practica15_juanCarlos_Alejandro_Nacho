@@ -33,8 +33,7 @@ public class StartSolitario {
 			tablero.girar();
 			tablero.imprimir();
 			if(baraja.getCartas().size() != 0){
-				System.out.println("¿Desea sacar nuevas cartas del mazo?");
-				if(scanner.next().equals("si")) {
+				if(	bucleRespuesta("¿Desea sacar nuevas cartas del mazo?").equals("si")) {
 					for(int j = 0; j < 10 ;j++) {
 						primerasCartas.add(baraja.sacarCarta());
 					}
@@ -43,24 +42,17 @@ public class StartSolitario {
 				}
 			}
 			System.out.println("¿Qué columna desea mover?");
-			columna = scanner.nextInt()-1;
+			columna = comprobarMoverCarta()-1;
 			System.out.println("¿A qué columna desea mover?");
-			columna1 = scanner.nextInt()-1;
+			columna1 = comprobarMoverCarta()-1;
 			System.out.println("¿Cuántas cartas?");
-			cantidad = scanner.nextInt();
+			cantidad = comprobarMoverMaximaCantidad(tablero);
 			tablero.mover(columna, columna1,cantidad);
 		}while(acabar);
-	}
+	}	
 	
 	
-}
-
-	
-	
-	
-
-
-/*public static int comprobarInt() {
+	public static int comprobarMoverCarta() {
 		boolean corregir;
 		int numero = 0;
 		do {
@@ -68,51 +60,60 @@ public class StartSolitario {
 			corregir = teclado.hasNextInt();
 				if(corregir){
 					numero = teclado.nextInt();
+					if(numero > 10 || numero < 1) {
+						corregir = false;
+						System.out.println("Introduce un numero entre 1 y 10");
+					}
 				}else{
 						System.out.println("Introduce un numero");
 				}
 		}while(!corregir); 
 		return numero;
 	}
-
-/*
-System.out.println("Baraja: "+baraja.getCartas().size());
-
-System.out.println("Tablero: "+barajaTablero.size());
-int x=9;
-for(int j = 0; j < barajaTablero.size();j++) {
-	System.out.print(barajaTablero.get(j));
-	if(j == x) {
-		System.out.println();
-		x = x+10;
+	
+	public static int comprobarMoverMaximaCantidad(Tablero tablero) {
+		boolean corregir;
+		int numero = 0;
+		do {
+			Scanner teclado = new Scanner(System.in);
+			corregir = teclado.hasNextInt();
+				if(corregir){
+					numero = teclado.nextInt();
+					if(numero > tablero.maximo()) {
+						corregir = false;
+					}
+				}else{
+						System.out.println("Introduce un numero");
+				}
+		}while(!corregir); 
+		return numero;
 	}
+	
+	
+	public static String bucleRespuesta(String correcto) {
+		Scanner scanner = new Scanner(System.in);
+		String letra;
+		boolean sino = true;
+		boolean bucle = true;
+		do {
+			System.out.println(correcto);
+			letra = scanner.next();
+				if(letra.equalsIgnoreCase("si") || letra.equalsIgnoreCase("no")){
+					sino = false;
+					if(letra.equalsIgnoreCase("si")) {
+						bucle = false;
+					}
+				}
+		}while(sino);
+		return letra; 
+	}	
+	
 	
 }
 
-/*System.out.println("columna:" +columna.getColumna().size());
-
-Columna columna = new Columna(barajaTablero);
-for(int j = 0; j < columna.getColumna().size();j++) {
-	System.out.print(columna.getColumna().get(j));
-}
-System.out.println();
-Columna columna1 = new Columna(barajaTablero);
-for(int j = 0; j < columna1.getColumna().size();j++) {
-	System.out.print(columna1.getColumna().get(j));
-}
-
-
-
-	for(int j = 0; j < baraja.getCartas().size();j++) {
-		System.out.println(baraja.getCartas().get(j));
-	}
-	System.out.println(baraja.getCartas().size());
 	
-	for(int j = 0; j < tablero.size();j++) {
-		System.out.println(tablero.get(j));
-	}
-	System.out.println(tablero.size());
-	*/
+	
+
 
 	
 	
